@@ -32,4 +32,7 @@ par_species <-demons %>%
 par_speciesT <- par_species$Male + par_species$Female
 par_speciesT
 
+demons_tidy %>% 
+  pivot_wider(key=Gender, value=CharacterCount)
+
 

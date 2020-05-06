@@ -21,7 +21,15 @@ demons_tidy <- pivot_longer(demons, cols=c(Female,Male), names_to='Gender', valu
 demons_tidy <- arrange(demons_tidy, Gender)
 demons_tidy
 
+by_species <- demons_tidy %>% 
+  group_by(Species) %>% 
+  summarize(CharacterCount = sum(CharacterCount))
+by_species
 
-
+par_species <-demons %>%
+  group_by(Species)%>%
+  summarize(Male = sum(Male), Female=sum(Female))
+par_speciesT <- par_species$Male + par_species$Female
+par_speciesT
 
 

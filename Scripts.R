@@ -1,4 +1,6 @@
-install.packages("tidyverse")
+update.packages()
+install.packages("tidyverse", dependencies =TRUE)
+install.packages("tibble")
 library(tidyverse)
 library(dplyr)
 library(tidyr)
@@ -8,10 +10,18 @@ library(readr)
 library(purrr)
 library(stringr)
 library(forcats)
-
+version
 snake <- read.csv("BlackButler.csv")
 levi <- read.csv("ObeyMe.csv")
 demons <- bind_rows(snake, levi)
 str(demons)
 demons
 write.csv(demons, file = "Demons.csv")
+demons_tidy <- pivot_longer(demons, cols=c(Female,Male), names_to='Gender', values_to='CharacterCount')
+demons_tidy <- arrange(demons_tidy, Gender)
+demons_tidy
+
+
+
+
+

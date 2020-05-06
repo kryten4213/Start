@@ -33,6 +33,8 @@ par_speciesT <- par_species$Male + par_species$Female
 par_speciesT
 
 demons_tidy %>% 
-  pivot_wider(key=Gender, value=CharacterCount)
-
+  unite(Species_Gender, Species, Gender) %>%
+  pivot_wider(names_from=Species_Gender, values_from=CharacterCount)
+str(demons_tidy)
+write.csv(demons_tidy, file = "Demons_Untidy_Pivot.csv")
 

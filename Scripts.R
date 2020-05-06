@@ -11,3 +11,7 @@ library(forcats)
 
 snake <- read.csv("BlackButler.csv")
 levi <- read.csv("ObeyMe.csv")
+demons <- bind_rows(snake, levi)
+str(demons)
+demons
+write.csv(demons, file = "Demons.csv")

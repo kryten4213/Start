@@ -1,0 +1,13 @@
+install.packages("tidyverse")
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(tibble)
+library(readr)
+library(purrr)
+library(stringr)
+library(forcats)
+
+snake <- read.csv("BlackButler.csv")
+levi <- read.csv("ObeyMe.csv")

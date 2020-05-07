@@ -24,7 +24,23 @@ if (age_class == "sapling"){
 y
 
 #3.1
-
+age_class = "seedling"
+if (age_class=="sapling"){
+  y <- 10
+}else if (age_class=="seedling") {
+  y <- 5
+}
+y
+#3.2
+age_class = "adult"
+if (age_class=="sapling"){
+  y <- 10
+}else if (age_class=="seedling") {
+  y <- 5
+} else {
+  y <- 0
+}
+y
 
 
 

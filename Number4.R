@@ -11,3 +11,4 @@ select(shrubery, site, experiment)
 filter(shrubery, height>5)
 shrub_data_w_vols <- mutate(shrubery, volume=length*width*height)
 shrub_data_w_vols
+

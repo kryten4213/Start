@@ -2,7 +2,7 @@
 pounds_to_grams <- function(pounds) {
   grams <- pounds*453.592
   return(grams)
-}
+}#calculates grams from pounds
 pounds_to_grams(3.75)   #Ans: 1700.97g
 
 #2.1
@@ -31,6 +31,15 @@ get_mass_given_length(22,214.44,1.46) #some sauropod
 #3.2
 get_mass_given_length(16) #unknown dinosaur
 #Answer: 53911.93 kg
+
+#4.1
+get_pounds_from_kg <- function(kg) {
+  pounds <- kg*2.205
+  return(pounds)
+}#calculates pounds from kilos
+stegosaurusPounds <- get_mass_given_length(12,10.95,2.64) %>%
+  get_pounds_from_kg()
+stegosaurusPounds   #Ans: 17055.37 lbs
 
 
 

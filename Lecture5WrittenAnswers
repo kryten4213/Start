@@ -1,0 +1,10 @@
+13.2.1.1
+You'd need origin and faa, and would connect the airports and weather tibbles.
+
+13.2.1.2
+Weather and airports are connected via the origin and faa variables, which both tell you where you are. 
+
+13.2.1.3
+It would also define the destination variable in that case.
+
+13.

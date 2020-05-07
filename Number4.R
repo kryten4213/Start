@@ -59,5 +59,11 @@ survey_DO_pipes <- filter(survey, species_id=='DO') %>%
   summarize(avg_weight=mean(weight, na.rm=TRUE))
 survey_DO_pipes
 
+#~~~~~~~~~~~~~~~~~~~~~~~~Lecture 5~~~~~~~~~~~~~~~~~~~~~~~~~~~
+install.packages("nycflights13")
+library(nycflights13)
+#5.1 - In text file
+#5.2 - In text file
+#5.3
 
 

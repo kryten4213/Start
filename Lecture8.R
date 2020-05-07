@@ -17,7 +17,13 @@ x>y
 masses>40
 
 #2.1
+age_class = "sapling"
+if (age_class == "sapling"){
+  y <- 10
+}
+y
 
+#3.1
 
 
 

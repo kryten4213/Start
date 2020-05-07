@@ -22,6 +22,15 @@ get_mass_from_length(26, 214.44, 1.46) #some sauropod
 #Ans: 24955.54 kg
 
 #3.1
+get_mass_given_length <- function(length, a=39.9, b=2.6) {
+  mass <- a * length ^b
+  return(mass)
+}#estimates body mass in kg based on body length (m) & allometric values a & b
+get_mass_given_length(22,214.44,1.46) #some sauropod
+#Ans: 19554.33 kg
+#3.2
+get_mass_given_length(16) #unknown dinosaur
+#Answer: 53911.93 kg
 
 
 

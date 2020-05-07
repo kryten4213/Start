@@ -42,5 +42,30 @@ if (age_class=="sapling"){
 }
 y
 
+#4
+get_mass_from_length_by_name <- function(length, name) {
+  if(name=="Stegosauria") {
+    mass <- get_mass_from_length(length, 10.95, 2.64)
+  }else if (name=="Theropoda") {
+    mass <- get_mass_from_length(length, .73, 3.63)
+  }else if (name=="Sauropoda") {
+    mass <- get_mass_from_length(length, 214.44, 1.46)
+  }else {
+    mass <- get_mass_from_length(length, NA, NA)
+    print("Sorry, I don't know the allometric constants for that taxa.")
+  }
+  return(mass)
+}
+#4.1
+get_mass_from_length_by_name(10, "Stegosauria") #Ans: 4779.848 kg
+#4.2
+get_mass_from_length_by_name(8, "Theropoda") #Ans: 1385.286 kg
+#4.3
+get_mass_from_length_by_name(12, "Sauropoda") #Ans: 8070.685 kg
+#4.4
+get_mass_from_length_by_name(13, "Ankylosauria") #Ans: Sorry can't compute; NA
+
+
+
 
 

@@ -65,6 +65,34 @@ get_mass_from_length_by_name(12, "Sauropoda") #Ans: 8070.685 kg
 #4.4
 get_mass_from_length_by_name(13, "Ankylosauria") #Ans: Sorry can't compute; NA
 
+#5.1
+for (i in 2:16){
+  print(i)
+}
+#5.2
+for (i in 1:5){
+  print(i*3)
+}
+#5.3
+birds = c('robin', 'woodpecker', 'blue jay', 'sparrow')
+for (i in 1:length(birds)){
+  print(birds[i])
+}
+#5.4
+radius <- c(1.3, 2.1, 3.5)
+areas <- vector(mode = "numeric", length = 3)
+for (i in 1:length(areas)){
+  areas[i] <- pi * radius[i] ^ 2
+}
+areas
+#5.5
+lengths = c(1.1, 2.2, 1.6)
+widths = c(3.5, 2.4, 2.8)
+areas <- vector(length = 3)
+for (i in 1:length(areas)) {
+  areas[i] <- lengths[i] * widths[i]
+}
+areas
 
 
 

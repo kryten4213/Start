@@ -36,5 +36,28 @@ survey_DO_year <- group_by(survey_DO, year)
 survey_DO_weightByYear <- summarize(survey_DO_year, avg_weight=mean(weight, na.rm=TRUE))
 survey_DO_weightByYear
 
+#3.1
+survey_mutant_kg <- mutate(survey, weight_kg=weight/1000) %>%
+  select(year, species_id, weight_kg) %>%
+  na.omit()
+survey_mutant_kg
+#3.2
+survey_SH <- filter(survey, species_id=='SH') %>%
+  select(year, month, day, species_id)
+survey_SH
+#3.3
+survey_ID <- group_by(survey, species_id) %>%
+  summarize(n())
+survey_ID
+#3.4
+survey_ID_year <- group_by(survey, species_id, year) %>%
+  summarize(n())
+survey_ID_year
+#3.5
+survey_DO_pipes <- filter(survey, species_id=='DO') %>%
+  group_by(year) %>%
+  summarize(avg_weight=mean(weight, na.rm=TRUE))
+survey_DO_pipes
+
 
 

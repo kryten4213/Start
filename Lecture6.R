@@ -26,6 +26,7 @@ it_land <- gsub(("land"), ("\\1LAND"), it_land)
 it_land
 
 #4.1
-
+o_conts <- grep(("o"), levels(gDat$continent), value = TRUE, ignore.case = TRUE)
+o_conts
 
 

@@ -61,9 +61,44 @@ survey_DO_pipes
 
 #~~~~~~~~~~~~~~~~~~~~~~~~Lecture 5~~~~~~~~~~~~~~~~~~~~~~~~~~~
 install.packages("nycflights13")
+install.packages("maps")
+library(maps)
 library(nycflights13)
-#5.1 - In text file
-#5.2 - In text file
-#5.3
+#1 - In text file
+#2 - In text file
+airports %>%
+  semi_join(flights, c("faa" = "dest")) %>%
+  ggplot(aes(lon, lat)) +
+  borders("state") +
+  geom_point() +
+  coord_quickmap()
+#2.1
+avg_delay <- flights %>%
+  group_by(dest) %>%
+  summarize(delay = mean(arr_delay, na.rm = TRUE)) %>%
+  inner_join(airports, by = c(dest = "faa"))
+avg_delay %>%
+  ggplot(aes(lon, lat, color=delay)) +
+  borders("state") +
+  geom_point() +
+  coord_quickmap()
+#2.2
+locations <- airports %>%
+  select(faa, lat, lon)
+flights %>%
+  select(year, month, day, hour, origin, dest) %>%
+  left_join(locations, by = c("origin" = "faa")) %>%
+  left_join(locations, by = c("dest" = "faa"))
+#2.3
+plane_comp <- inner_join(flights, select(planes, tailnum, plane_year=year), by="tailnum")
+plane_comp <- mutate(plane_comp, age=year-plane_year) %>%
+  na.omit()
+ggplot(plane_comp, aes(x = age, y = arr_delay)) +
+  geom_point() +
+  scale_x_continuous("Age of plane (years)") +
+  scale_y_continuous("Mean Departure Delay (minutes)")
+
+#3
+
 
 

@@ -8,9 +8,11 @@ Weather and airports are connected via the origin and faa variables, which both 
 It would also define the destination variable in that case.
 
 13.4.6.1
-
+Done in Number4 Rscript.
 
 13.4.6.2
-
+Done in Number4 R script.
 
 13.4.6.3
+Done in Number4 R script. Broadly speaking, the youngest and oldest planes have
+shorter departure times than the middle aged ones.
